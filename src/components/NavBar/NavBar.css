@@ -1,0 +1,19 @@
+.navbar {
+    position: sticky!important;
+}
+
+.navMenu {
+    width: 100%;
+    position: sticky;
+    top: 0px;
+    z-index: 100;
+}
+
+.brand {
+    padding-left: 20px;
+    transition-duration: 0.5s;
+}
+
+.brand:hover {
+    transform: scale(1.1);
+}

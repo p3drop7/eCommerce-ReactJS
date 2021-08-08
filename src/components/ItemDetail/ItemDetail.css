@@ -1,0 +1,71 @@
+.itemDetailContainer {
+    height: 80vh;
+    width: auto;
+    margin-top: 30px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.itemDetail {
+    height: 100%;
+    width: 740px;
+    justify-self: center;
+    align-self: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+        "itemPicture itemDescription"
+        "itemPicture itemCounter";
+}
+
+.itemPicture {
+    grid-area: itemPicture;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: auto;
+    width: 100%;
+    justify-self: center;
+}
+
+.itemDescription {
+    grid-area: itemDescription;
+    width: 60%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-self: center;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.detailTitle {
+    margin: 0px;
+    font-size: 2em;
+    color: #212120;
+}
+
+.detailPrice {
+    margin: 0px;
+    font-size: 1.5em;
+    color: #212120;
+    font-weight: lighter;
+}
+
+.ItemCountContainer {
+    grid-area: itemCounter;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.confirmAddButton {
+    height: 40px !important;
+    width: 60%;
+    margin-top: 15px;
+    align-self: center;
+    justify-self: center;
+}

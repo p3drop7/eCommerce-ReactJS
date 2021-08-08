@@ -1,0 +1,53 @@
+.itemListContainer {
+    height: auto;
+    min-height: 70vh;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.cardCol {
+    margin: 30px;
+    display: flex;
+    flex-flow: col nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    margin: 10px;
+    width: 300px;
+    height: 100%;
+}
+
+.cardImage {
+    padding: 10px;
+}
+
+.cardBody {
+    margin: 0px;
+    padding: 0px !important;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+}
+
+.cardTitle {
+
+    margin: 5px;
+    font-size: 1.5em;
+    font-weight: bolder;
+    color: #212120;
+}
+.cardText {
+    margin: 5px;
+    font-size: 1em;
+    font-weight: lighter;
+    color: #212120;
+}
+
+.link {
+    text-decoration: none;
+}
