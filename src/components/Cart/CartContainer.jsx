@@ -1,4 +1,5 @@
 import { useContext } from 'react'
+import { Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { CartContext } from './CartContext'
 import CartItem from './CartItem'
@@ -17,6 +18,7 @@ function CartContainer() {
                 </div> }  
             
             { cart.length !== 0 && <h2>Total price: ${totalPrice}</h2>}
+            { cart.length !== 0 && <Link to="/order"><Button>Confirm Order</Button></Link> }
 
             { cart && cart.map(element => <CartItem
                         key={element.item.id}

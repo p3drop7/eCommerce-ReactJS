@@ -6,6 +6,7 @@ import NavBarContainer from './components/NavBar/NavBarContainer';
 import ItemListContainer from './components/ItemList/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetail/ItemDetailContainer';
 import CartContainer from './components/Cart/CartContainer';
+import OrderContainer from './components/Order/OrderContainer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
@@ -33,7 +34,11 @@ function App() {
             <Route exact path="/cart" >
               <CartContainer />
             </Route>
-            
+
+            <Route exact path="/order" >
+              <OrderContainer />
+            </Route>
+
           </Switch>
         </BrowserRouter>
       </CartContextProvider>
