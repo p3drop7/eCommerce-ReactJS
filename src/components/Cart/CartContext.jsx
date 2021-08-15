@@ -46,13 +46,17 @@ export function CartContextProvider({children}) {
         }
     }
 
+    function emptyCart(){
+        setCart([])
+    }
+
     function getTotalPrice(newCartList){
         const total = newCartList.reduce( (acum, value) => acum + (value.quantity * value.item.price), 0)
         return total
     }
 
     return(
-        <CartContext.Provider value={{ cart, size, totalPrice, updateCart, removeItem, getTotalPrice }} >
+        <CartContext.Provider value={{ cart, size, totalPrice, updateCart, removeItem, getTotalPrice, emptyCart }} >
             {children}
         </CartContext.Provider>
     )

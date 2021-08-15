@@ -7,7 +7,7 @@ import CartItem from './CartItem'
 
 function CartContainer() {
 
-    const { cart, removeItem, totalPrice } = useContext(CartContext)
+    const { cart, removeItem, totalPrice, emptyCart } = useContext(CartContext)
 
     return (
         <div>
@@ -18,6 +18,9 @@ function CartContainer() {
                 </div> }  
             
             { cart.length !== 0 && <h2>Total price: ${totalPrice}</h2>}
+
+            { cart.length !== 0 && <Button onClick={emptyCart} >Empty cart</Button> }<br/>
+
             { cart.length !== 0 && <Link to="/order"><Button>Confirm Order</Button></Link> }
 
             { cart && cart.map(element => <CartItem
