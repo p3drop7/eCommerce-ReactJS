@@ -19,37 +19,14 @@ function ItemListContainer() {
             data.collection('items').get()
                 .then(res=> setItems( res.docs.map(item => ({...item.data(), id: item.id} ))))
                 .catch(err => console.log("Error " + err))
-                .finally( ()=> console.log("Firestore 'items' collection loaded") )
         
         }else{
             data.collection('items').where("type", "==", categoryId).get()
                 .then(res=> setItems( res.docs.map(item => ({...item.data(), id: item.id} ))))
                 .catch(err => console.log("Error " + err))
-                .finally( ()=> console.log("Firestore 'items' collection loaded by category") )
         }
             
     }, [categoryId])
-    
-    /* useEffect(()=>{
-        
-        setItems(false)
-        
-        setTimeout(()=>{
-            
-            if(categoryId === undefined){
-                getData()
-                    .then(res => {setItems(res)})
-                    .catch(err => {console.log("Error: " + err)})
-                    .finally(()=> {console.log("Finish")})
-
-            }else{
-                getData()
-                    .then(res => { setItems(res.filter(it => it.type === categoryId))})
-                    .catch(err => {console.log("Error: " + err)})
-                    .finally(()=> {console.log("Finish")})
-            }
-        }, 1000)          
-    }, [categoryId]) */
 
     return (
         <Container className="itemListContainer" >

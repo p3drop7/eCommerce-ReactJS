@@ -15,30 +15,7 @@ function ItemDetailContainer() {
         const data = getFirestore()
         data.collection('items').doc(itemId).get()
             .then(res => setItem( {...res.data(), id: res.id} ))
-            .finally(()=> console.log("Detail loaded"))
-
-            /* data.collection('items').get()
-            .then(res => {
-                const dataLoaded = res.docs.map( item => ({...item.data(), id: item.id}) )
-                const dataFiltered = dataLoaded.find( item => item.id === itemId )
-                setItem(dataFiltered)
-            })
-            .finally(()=> console.log("Detail loaded")) */
     }, [itemId])
-
-    /* useEffect(()=>{
-        setItem(false)
-
-        setTimeout(()=>{
-
-            getData()
-                .then( res => { setItem( res.find( it => it.id === parseInt(itemId)))})
-                .catch(err => { console.log("Error: " + err) })
-                .finally(()=> { console.log("Finish") })
-
-        }, 1000)
-        
-    }, [itemId]) */
 
     return (
         <div className="itemDetailContainer" >
