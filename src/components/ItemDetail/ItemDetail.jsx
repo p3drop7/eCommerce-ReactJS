@@ -38,10 +38,10 @@ function ItemDetail({item}) {
             {quantityAdded === false && (
                 <div className="ItemCountContainer">
                     <ItemCounter 
-                    add={add}
-                    substract={substract}
-                    addToCart={addToCart}
-                    counter={counter}
+                        add={add}
+                        substract={substract}
+                        addToCart={addToCart}
+                        counter={counter}
                     />
                 </div>
             )}

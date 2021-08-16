@@ -1,0 +1,27 @@
+form {
+    margin-top: 40px !important;;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+form input {
+    height: 33px;
+    width: 300px;
+    margin: 10px;
+    border: 1px solid gray;
+    border-radius: 2px;
+}
+
+form Button {
+    margin: 10px;
+}
+
+.confirmOrder {
+    margin-top: 50px;
+}
+
+.confirmedPurchase {
+    margin-top: 40px;
+}

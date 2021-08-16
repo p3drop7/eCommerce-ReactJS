@@ -11,6 +11,7 @@
 .itemDetail {
     height: 100%;
     width: 740px;
+    margin: 50px 10px;
     justify-self: center;
     align-self: center;
     display: grid;

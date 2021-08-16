@@ -3,32 +3,46 @@ import { Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { CartContext } from './CartContext'
 import CartItem from './CartItem'
+import './Cart.css'
 
 
 function CartContainer() {
 
-    const { cart, removeItem, totalPrice, emptyCart } = useContext(CartContext)
+    const { cart, removeItem, totalPrice, emptyCart, size } = useContext(CartContext)
 
     return (
         <div>
 
-            { cart.length === 0 && <div>
-                <p>No items added</p>
-                <Link to={"/"}><button>Go Back</button></Link>
-                </div> }  
-            
-            { cart.length !== 0 && <h2>Total price: ${totalPrice}</h2>}
+            { cart.length !== 0 && 
+                <div className='cartContainer' >
 
-            { cart.length !== 0 && <Button onClick={emptyCart} >Empty cart</Button> }<br/>
+                    <div className='cartList'>
+                        {cart.map(element => 
+                            <CartItem
+                                key={element.item.id}
+                                item={element.item}
+                                quantity={element.quantity}
+                                removeItem={removeItem}
+                            />
+                        )}
+                    </div>
 
-            { cart.length !== 0 && <Link to="/order"><Button>Confirm Order</Button></Link> }
+                    <div className='cartTotal' >
+                        <h2>Total</h2>
+                        <p>${totalPrice}</p>
+                        { size === 1 && <p>{size} item</p> }
+                        { size > 1 && <p>{size} items</p> }
+                        <Link to="/order"><Button variant="success" >Confirm Order</Button></Link>
+                        <Button onClick={emptyCart} variant="danger">Empty cart</Button>
+                    </div>
+                </div>
+            }
 
-            { cart && cart.map(element => <CartItem
-                        key={element.item.id}
-                        item={element.item}
-                        quantity={element.quantity}
-                        removeItem={removeItem}
-                        />)
+            { cart.length === 0 && 
+                <div className="emptyCart">
+                    <h2>No items added</h2>
+                    <Link to={"/"}><Button variant="secondary">Go Back</Button></Link>
+                </div> 
             }
             
         </div>
