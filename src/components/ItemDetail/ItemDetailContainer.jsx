@@ -11,7 +11,6 @@ function ItemDetailContainer() {
     const { itemId } = useParams()
 
     useEffect(() => {
-        
         const data = getFirestore()
         data.collection('items').doc(itemId).get()
             .then(res => setItem( {...res.data(), id: res.id} ))
