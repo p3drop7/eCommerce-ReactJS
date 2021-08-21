@@ -4,7 +4,8 @@ import './Logo.css'
 function Logo() {
     return (
         <div className="logoContainer">
-            <img src='../../../public/assets/cover1.jpeg' />
+           <p className="logoTittle">PCS</p>
+           <p className="logoSubtittle">Peter's Clothing Store</p>
         </div>
     )
 }

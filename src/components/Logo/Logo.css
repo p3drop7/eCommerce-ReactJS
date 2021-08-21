@@ -1,3 +1,31 @@
 .logoContainer {
-    height: 70vh;
+    width: 100%;
+    height: 85vh;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: rgba(0,0,0,0.5)url('https://i.ibb.co/4Swm4vw/cover1.jpg');
+    background-blend-mode: darken;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.logoTittle {
+    margin: 0px;
+    font-size: 5em;
+    color: white;
+    text-decoration: underline;
+    text-decoration-thickness: 0.2px;
+}
+
+.logoSubtittle {
+    font-size: 2em;
+    color: white;
+    font-weight: lighter;
+}
+
+img {
+    width: 100%;
 }
