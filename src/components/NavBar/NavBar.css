@@ -4,12 +4,16 @@
 
 .navMenu {
     width: 100%;
+    padding: 0px !important;
     position: sticky;
     top: 0px;
     z-index: 100;
 }
 
 .brand {
+    font-size: 2em !important;
+    text-decoration: underline !important;
+    text-decoration-thickness: 0.1px !important;
     padding-left: 20px;
     transition-duration: 0.5s;
 }

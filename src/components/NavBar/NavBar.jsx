@@ -12,8 +12,9 @@ function NavBar({cats}) {
     const { cart } = useContext(CartContext)
     
     return (
+        
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className="navMenu" cats={cats} >
-            <Navbar.Brand as={Link} to="/" className="brand">Peter's Clothing Store</Navbar.Brand>
+            <Navbar.Brand as={Link} to="/" className="brand">PCS</Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             {
                 cart.length >= 1 && <CartWidget />

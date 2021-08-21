@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { getData } from '../../data/getData';
+import { getFirestore } from '../../data/firebaseService'
 import NavBar from './NavBar';
 import './NavBar.css'
 
@@ -7,11 +7,10 @@ function NavBarContainer() {
     const [cats, setCats] = useState([])
 
     useEffect(() => {
-        setTimeout(()=>{
-            getData()
-                .then(res => ( res = res.map(it => it.type) ))
-                .then(res => setCats( res.filter((it, i) => res.indexOf(it) === i) )) 
-        }, 1000);
+        const db = getFirestore()
+        db.collection('items').get()
+            .then(res => ( res = res.docs.map( item => item.data().type )))
+            .then(res => setCats( res.filter((it, i) => res.indexOf(it) === i) ))
     }, [])
     
     return (

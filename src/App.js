@@ -3,6 +3,7 @@ import 'core-js'
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { CartContextProvider } from './components/Cart/CartContext';
 import NavBarContainer from './components/NavBar/NavBarContainer';
+import Logo from './components/Logo/Logo';
 import ItemListContainer from './components/ItemList/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetail/ItemDetailContainer';
 import CartContainer from './components/Cart/CartContainer';
@@ -17,6 +18,8 @@ function App() {
       <CartContextProvider> 
         <BrowserRouter>
           <NavBarContainer />
+          <Logo />
+          
           <Switch>
             
             <Route exact path="/">
