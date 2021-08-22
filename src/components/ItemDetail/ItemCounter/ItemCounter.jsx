@@ -1,5 +1,4 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
+import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai';
 import './ItemCounter.css'
 import "../ItemDetail.css"
 
@@ -9,9 +8,9 @@ function ItemCounter({addToCart, substract, add, counter}) {
         <>
             
             <div>
-                <button onClick={substract} ><FontAwesomeIcon icon={faMinus} /></button>
+                <button onClick={substract}><AiOutlineMinus/></button>
                 <div>{counter}</div>
-                <button onClick={add} ><FontAwesomeIcon icon={faPlus}/></button>
+                <button onClick={add}><AiOutlinePlus/></button>
             </div>
 
             <button className="addButton" onClick={addToCart}>Add to cart</button>

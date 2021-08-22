@@ -33,8 +33,8 @@ function ItemDetail({item}) {
     return (
         <div className="itemDetail" >
             <Detail item={item}/>
-            
-            {quantityAdded === false && (
+             
+            { quantityAdded === false && (
                 <div className="ItemCountContainer">
                     <ItemCounter 
                         add={add}
@@ -45,7 +45,7 @@ function ItemDetail({item}) {
                 </div>
             )}
 
-            {quantityAdded && (
+            { quantityAdded && (
                 <div className="ItemCountContainer">
                     <Link to="/cart" className="confirmAddButton" >Go to cart</Link>
                     <Link to="/" className="goBackButton" >Go back</Link>
