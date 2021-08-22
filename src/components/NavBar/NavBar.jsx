@@ -1,11 +1,11 @@
 import { useContext } from 'react'
-import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import CartWidget from '../CartWidget/CartWidget';
-import { Link } from 'react-router-dom';
-import './NavBar.css'
 import { CartContext } from '../Cart/CartContext';
+import { Link } from 'react-router-dom';
+import CartWidget from '../CartWidget/CartWidget';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+import './NavBar.css'
 
 function NavBar({cats}) {
 
@@ -21,8 +21,8 @@ function NavBar({cats}) {
             }
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="mr-auto">
-                    <Nav.Link as={Link} to="/" >Home</Nav.Link>
-                    <NavDropdown title="Categories" id="collasible-nav-dropdown">
+                    <Nav.Link as={Link} to="/" >HOME</Nav.Link>
+                    <NavDropdown title="CATEGORIES" id="collasible-nav-dropdown">
                         {
                             cats.map(it => <NavDropdown.Item 
                                 as={Link} 

@@ -1,4 +1,5 @@
 import React from "react"
+import { FaRegTrashAlt } from 'react-icons/fa'
 import './Cart.css'
 
 function CartItem({item, quantity, removeItem}) {
@@ -11,11 +12,11 @@ function CartItem({item, quantity, removeItem}) {
             </div>
 
             <div className="cartItemDescription" >
-                <h2>{item.name}</h2>
+                <h4>{item.name}</h4>
                 <p>Price: ${item.price}</p>
                 <p>Quantity: {quantity}</p>
                 <p>Total: ${item.price * quantity}</p>
-                <button onClick={()=> removeItem(item.id)}>Remove</button>
+                <FaRegTrashAlt onClick={()=> removeItem(item.id)} className="tash"/>
             </div>   
 
         </div>

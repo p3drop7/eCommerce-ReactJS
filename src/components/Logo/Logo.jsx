@@ -5,7 +5,7 @@ function Logo() {
     return (
         <div className="logoContainer">
            <p className="logoTittle">PCS</p>
-           <p className="logoSubtittle">Peter's Clothing Store</p>
+           <p className="logoSubtittle">PETER'S CLOTHING STORE</p>
         </div>
     )
 }

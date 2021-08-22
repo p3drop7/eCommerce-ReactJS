@@ -1,8 +1,8 @@
+import CartItem from './CartItem'
 import { useContext } from 'react'
 import { Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { CartContext } from './CartContext'
-import CartItem from './CartItem'
 import './Cart.css'
 
 
@@ -28,12 +28,15 @@ function CartContainer() {
                     </div>
 
                     <div className='cartTotal' >
+
                         <h2>Total</h2>
                         <p>${totalPrice}</p>
                         { size === 1 && <p>{size} item</p> }
                         { size > 1 && <p>{size} items</p> }
-                        <Link to="/order"><Button variant="success" >Confirm Order</Button></Link>
-                        <Button onClick={emptyCart} variant="danger">Empty cart</Button>
+
+                        <Link to="/order" className="confirmOrder">Confirm Order</Link>
+                        <button onClick={emptyCart} >Empty cart</button>
+
                     </div>
                 </div>
             }

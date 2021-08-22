@@ -1,6 +1,5 @@
 import { useState, useContext } from 'react'
 import { Link } from 'react-router-dom'
-import { Button } from 'react-bootstrap'
 import Detail from './Detail'
 import ItemCounter from './ItemCounter/ItemCounter'
 import { CartContext } from '../Cart/CartContext'
@@ -48,8 +47,8 @@ function ItemDetail({item}) {
 
             {quantityAdded && (
                 <div className="ItemCountContainer">
-                    <Button variant="success" as={Link} to="/cart" className="confirmAddButton" >Go to cart</Button>
-                    <Button variant="secondary" as={Link} to="/" className="confirmAddButton" >Go back</Button>
+                    <Link to="/cart" className="confirmAddButton" >Go to cart</Link>
+                    <Link to="/" className="goBackButton" >Go back</Link>
                 </div>
             )}
                 

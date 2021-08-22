@@ -29,7 +29,7 @@ function ItemListContainer() {
     }, [categoryId])
 
     return (
-        <Container className="itemListContainer" >
+        <Container className="itemListContainer">
             { 
                 items ? <ItemList items={items} />
                       : <Spinner animation="border" variant="primary" />

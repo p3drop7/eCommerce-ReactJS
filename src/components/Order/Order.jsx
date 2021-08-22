@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { getFirestore } from '../../data/firebaseService'
 import { useContext, useState } from 'react'
 import { CartContext } from '../Cart/CartContext'
-import { Button } from 'react-bootstrap'
+import { IoAlertCircleOutline } from "react-icons/io5";
 import './Order.css'
 
 function Order() {
@@ -61,14 +61,14 @@ function Order() {
             })
     }
 
-    console.log(buyer)
-    console.log(order)
-
     return (
-        <div>
+        <div className="order">
+
+            <div className="orderTitle" >PCS</div>
+            <div className="orderSubtitle">ENTER YOUR SHOPPING DETAILS</div>
             
             { buyerLoaded === 100 &&
-                <form onSubmit={handleSubmit} onChange={handleChange} >
+                <form onSubmit={handleSubmit} onChange={handleChange} className="confirmForm" >
                 
                     <input 
                         type="text" 
@@ -90,23 +90,26 @@ function Order() {
 
                     <input 
                         type="email" 
-                        placeholder="Email" 
+                        placeholder="Confirm Email" 
                         name="confirmEmail"
                     />
 
-                    {emailError && <p>Please, check email</p>}
+                    { emailError && 
+                        <p className="checkEmail" >
+                            <IoAlertCircleOutline/>Please, check email
+                        </p>
+                    }
                     
-                    <Button type="submit">Confirm</Button>
+                    <button type="submit">CONFIRM</button>
 
                 </form>
-
             }
 
             { buyerLoaded === 200 &&
-                <div className="confirmOrder">
+                <div className="sendOrderDetails" >
                     <p>Name: {order.buyer.name}</p>
                     <p>Total ${order.total}</p>
-                    <Button variant="success" onClick={onConfirm}>Send order</Button>
+                    <button onClick={onConfirm} className="sendOrderButton" >Send order</button>
                 </div>
             }
 
@@ -114,10 +117,9 @@ function Order() {
 
             { orderID &&
                 <div className="confirmedPurchase">
-                    <p>ID: {orderID}</p>
-                    <p>Total {order.total}</p>
-                    <p>Nombre: {order.buyer.name}</p>
-                    <Link to="/"><Button variant="secondary">Go back</Button></Link>
+                    <p>Your order ID:</p>
+                    <p><strong>{orderID}</strong></p>
+                    <Link to="/" className="goBackButtonOrder">Go back</Link>
                 </div>
             } 
 

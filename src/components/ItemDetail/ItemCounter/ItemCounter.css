@@ -29,4 +29,12 @@
 
 .addButton {
     width: 100%;
+    border: 1px solid black;
+    background-color: white;
+    transition: all 0.3s;
+}
+
+.addButton:hover {
+    background-color: black;
+    color: white;
 }

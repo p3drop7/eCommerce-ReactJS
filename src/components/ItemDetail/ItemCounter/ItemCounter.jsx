@@ -1,6 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
-import { Button } from 'react-bootstrap'
 import './ItemCounter.css'
 import "../ItemDetail.css"
 
@@ -15,7 +14,7 @@ function ItemCounter({addToCart, substract, add, counter}) {
                 <button onClick={add} ><FontAwesomeIcon icon={faPlus}/></button>
             </div>
 
-            <Button className="addButton" variant="primary" onClick={addToCart}>Add to cart</Button>
+            <button className="addButton" onClick={addToCart}>Add to cart</button>
             
         </>
     )
