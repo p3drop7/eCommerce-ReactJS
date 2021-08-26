@@ -30,7 +30,7 @@ h2 {
     font-weight: bolder !important;
 }
 
-p {
+.footerContainer p {
     font-size: 0.9em;
     cursor: pointer;
 }

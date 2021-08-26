@@ -34,7 +34,7 @@ function Footer() {
             <div className="footerCopyrights">
                 <div className="footerLogo">PCS</div>
                 <p>Coded by Pedro Palencia 2021</p>
-                <a href="https://www.linkedin.com/in/pedro-palencia/" target="_blank">
+                <a href="https://www.linkedin.com/in/pedro-palencia/" target="_blank" rel="noreferrer">
                     <FaLinkedin />
                 </a>
             </div>
