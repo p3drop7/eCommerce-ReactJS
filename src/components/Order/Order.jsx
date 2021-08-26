@@ -3,7 +3,7 @@ import 'firebase/firestore'
 import { Link } from 'react-router-dom'
 import { getFirestore } from '../../data/firebaseService'
 import { useContext, useState } from 'react'
-import { CartContext } from '../Cart/CartContext'
+import { CartContext } from '../Context/CartContext'
 import { IoAlertCircleOutline } from "react-icons/io5";
 import './Order.css'
 

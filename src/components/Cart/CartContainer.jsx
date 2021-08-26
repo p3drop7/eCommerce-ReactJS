@@ -1,8 +1,8 @@
 import CartItem from './CartItem'
 import { useContext } from 'react'
+import { CartContext } from '../Context/CartContext'
 import { Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-import { CartContext } from './CartContext'
 import './Cart.css'
 
 
