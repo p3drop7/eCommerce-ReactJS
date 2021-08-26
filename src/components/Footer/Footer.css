@@ -1,0 +1,81 @@
+.footerContainer {
+    height: 80vh;
+    background-color: #DFDDD8;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.footerMenu {
+    width: 80%;
+    margin-top: 10px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.footerMenu div {
+    margin: 5px 50px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+h2 {
+    margin-bottom: 30px !important;
+    font-size: 0.9em !important;
+    font-weight: bolder !important;
+}
+
+p {
+    font-size: 0.9em;
+    cursor: pointer;
+}
+
+.contactArrow {
+    margin-left: 5px;
+    position: relative;
+    top: -2px;
+}
+
+.footerSocialMedia {
+    margin-top: 20px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.socialIcons {
+    margin: 0px 20px;
+    cursor: pointer;
+}
+
+.socialIcons:hover {
+    color: gray;
+    transition: all 0.5s;
+}
+
+.footerCopyrights p {
+    margin: 0px;
+}
+
+.footerLogo {
+    margin: 20px 0px;
+    font-size: 3em;
+    text-decoration: underline;
+    text-decoration-color: gray;
+    text-decoration-thickness: 1px;
+}
+
+.footerCopyrights a {
+    color: black;
+    transition: all 0.3s;
+}
+
+.footerCopyrights a:hover {
+    color: blue;
+}

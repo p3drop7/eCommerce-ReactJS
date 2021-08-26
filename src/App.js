@@ -8,6 +8,7 @@ import ItemDetailContainer from './components/ItemDetail/ItemDetailContainer';
 import CartContainer from './components/Cart/CartContainer';
 import Logo from './components/Logo/Logo';
 import Order from './components/Order/Order';
+import Footer from './components/Footer/Footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
@@ -43,6 +44,8 @@ function App() {
             </Route>
 
           </Switch>
+
+          <Footer />
         </BrowserRouter>
       </CartContextProvider>
 
