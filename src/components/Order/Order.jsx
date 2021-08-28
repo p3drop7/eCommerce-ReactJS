@@ -1,10 +1,11 @@
 import firebase from 'firebase/app'
 import 'firebase/firestore'
-import { Link } from 'react-router-dom'
 import { getFirestore } from '../../data/firebaseService'
+import { Link } from 'react-router-dom'
 import { useContext, useState } from 'react'
 import { CartContext } from '../Context/CartContext'
 import { IoAlertCircleOutline } from "react-icons/io5";
+import { Spinner } from 'react-bootstrap';
 import './Order.css'
 
 function Order() {
@@ -113,7 +114,7 @@ function Order() {
                 </div>
             }
 
-            { (!orderID && !buyerLoaded) && <p>Loading...</p>}
+            { (!orderID && !buyerLoaded) && <Spinner animation="border" variant="primary" />}
 
             { orderID &&
                 <div className="confirmedPurchase">
