@@ -16,22 +16,29 @@ function ItemDetailContainer() {
             top: 700,
             behavior: 'smooth'
           });
-    })
+    }) // Focuses window in ItemDetailContainer when loaded
 
     useEffect(() => {
         const data = getFirestore()
         data.collection('items').doc(itemId).get()
+
             .then((res) => {
+
                 if (!res.exists) {
+                    // This happens if the item does not exist in firestore
                     setExists(false)
                 }
+
                 setItem( {...res.data(), id: res.id} )
             })
+            
             .catch( err => console.log(err) )
-    }, [itemId])
+
+    }, [itemId])  // Gets the item in firestore with its itemId form the url with useParams
 
     return (
         <div className="itemDetailContainer" >
+
             { (item && exists) && <ItemDetail item={item} /> }
             
             { (!item && exists) && <Spinner animation="border" variant="primary" /> }

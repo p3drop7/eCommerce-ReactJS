@@ -10,18 +10,21 @@ function NavBar({cats}) {
     const { cart } = useContext(CartContext)
 
     return (
+
+        //NavBar collapsible using Bootstrap
         
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className="navBar" cats={cats} >
             <Navbar.Brand as={Link} to="/" className="brand">PCS</Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-            {
-                cart.length >= 1 && <CartWidget />
-            }
+            
+            { cart.length >= 1 && <CartWidget /> /* CartWidget visible if there are items in cart */ }
+
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="mr-auto">
                     <Nav.Link as={Link} to="/" >HOME</Nav.Link>
                     <NavDropdown title="CATEGORIES" id="collasible-nav-dropdown">
                         {
+                            //Categories maped from state "cats" in NavbarContainer.jsx
                             cats.map(it => <NavDropdown.Item 
                                 as={Link} 
                                 key={cats.indexOf(it)}

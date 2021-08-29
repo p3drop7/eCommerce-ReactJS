@@ -1,11 +1,12 @@
 import firebase from 'firebase/app'
 import 'firebase/firestore'
 import { getFirestore } from '../../data/firebaseService'
-import { Link } from 'react-router-dom'
 import { useContext, useState, useLayoutEffect } from 'react'
 import { CartContext } from '../Context/CartContext'
 import { Spinner } from 'react-bootstrap';
 import OrderForm from "./OrderForm"
+import ConfirmedPurchase from './ConfirmedPurchase'
+import ConfirmDetails from './ConfirmDetails'
 import './Order.css'
 
 function Order() {
@@ -15,14 +16,14 @@ function Order() {
     const [ buyerLoaded, setBuyerLoaded ] = useState(100)
     const [orderID, setOrderID] = useState(false)
     
-    const [buyer, setBuyer] = useState({
+    const [buyer, setBuyer] = useState({  // Buyer details
         name: "",
         phone: "",
         email: "",
         confirmEmail: ""
     })
 
-    const [order, setOrder] = useState({
+    const [order, setOrder] = useState({   // Oder Details
         items: cart,
         size: size,
         total: totalPrice,
@@ -43,19 +44,25 @@ function Order() {
         if(buyer.email === buyer.confirmEmail){
             setBuyerLoaded(200)
             setEmailError(false)
-            setOrder({...order, buyer: buyer})
+            setOrder({...order, buyer: buyer}) // Sets buyer details and order items in "order" state
+
         }else{
+            // This happens if email is not the same in both email input tags
             setEmailError(true)
         }
     }
 
     const onConfirm =()=> {
         setBuyerLoaded(false)
+
         const dataBase = getFirestore()
+
         dataBase.collection('orders').add(order)
             .then( ({id}) => setOrderID(id))
             .catch(err => console.log(err))
-            .finally(()=>{
+
+            .finally(()=>{   
+                // Empties everything from cart after sending the order
                 emptyCart()
                 emptySize()
                 emptyTotalPrice()
@@ -67,7 +74,7 @@ function Order() {
             top: 700,
             behavior: 'smooth'
           });
-    })
+    }) // Scrolls window to this component when loaded
 
     return (
         <div className="order">
@@ -80,22 +87,15 @@ function Order() {
             }
 
             { buyerLoaded === 200 &&
-                <div className="sendOrderDetails" >
-                    <p>YOUR NAME:</p>
-                    <p>{order.buyer.name}</p>
-                    <p>TOTAL: ${order.total}</p>
-                    <button onClick={onConfirm} className="sendOrderButton" >Send order</button>
-                </div>
+                <ConfirmDetails order={order} onConfirm={onConfirm} />
             }
 
-            { (!orderID && !buyerLoaded) && <Spinner animation="border" variant="primary" />}
+            { (!orderID && !buyerLoaded) && 
+                <Spinner animation="border" variant="primary" />
+            }
 
             { orderID &&
-                <div className="confirmedPurchase">
-                    <p>Your order ID:</p>
-                    <p><strong>{orderID}</strong></p>
-                    <Link to="/" className="goBackButtonOrder">Go back</Link>
-                </div>
+                <ConfirmedPurchase orderID={orderID} />
             } 
 
         </div>

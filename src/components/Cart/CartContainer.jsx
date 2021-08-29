@@ -1,7 +1,8 @@
-import CartItem from './CartItem'
 import { useContext, useLayoutEffect } from 'react'
 import { CartContext } from '../Context/CartContext'
 import { Link } from 'react-router-dom'
+import CartItem from './CartItem'
+import CartTotal from './CartTotal'
 import './Cart.css'
 
 
@@ -14,7 +15,7 @@ function CartContainer() {
             top: 700,
             behavior: 'smooth'
           });
-    })
+    }) // Scrolls window to this component when it's loaded
 
     return (
         <div className="cartContainerBox">
@@ -24,19 +25,14 @@ function CartContainer() {
             { cart.length !== 0 && 
                 <div className='cartContainer' >
 
-                    <div className='cartTotal' >
-                        <h2>Total</h2>
-                        <p>${totalPrice}</p>
-                        { size === 1 && <p>{size} ITEM</p> }
-                        { size > 1 && <p>{size} ITEMS</p> }
-                        <div>
-                            <Link to="/order" className="confirmOrder">Confirm Order</Link>
-                            <button onClick={emptyCart} >Empty cart</button>
-                        </div>    
-                    </div>
+                    <CartTotal 
+                        totalPrice={totalPrice} 
+                        size={size} 
+                        emptyCart={emptyCart}
+                        />
 
                     <div className='cartList'>
-                        {cart.map(element => 
+                        { cart.map(element => 
                             <CartItem
                                 key={element.item.id}
                                 item={element.item}

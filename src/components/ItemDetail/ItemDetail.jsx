@@ -12,19 +12,19 @@ function ItemDetail({item}) {
     const [quantityAdded, setQuantityAdded] = useState(false)
     const {updateCart} = useContext(CartContext)
 
-    function add(){
+    function add(){ // Adds one to the counter
         if(counter < item.stock){
             setCounter(counter + 1)
         }
     }
 
-    function substract(){
+    function substract(){ // Substracts 1 from the counter
         if(counter > 1){
             setCounter(counter - 1)
         }
     }
 
-    function addToCart(){
+    function addToCart(){ // Adds item to cart with its quantity
         setQuantityAdded(counter)
         updateCart(item, counter)        
     }
