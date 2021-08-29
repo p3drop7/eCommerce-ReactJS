@@ -1,7 +1,6 @@
 import CartItem from './CartItem'
 import { useContext } from 'react'
 import { CartContext } from '../Context/CartContext'
-import { Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import './Cart.css'
 
@@ -44,7 +43,7 @@ function CartContainer() {
             { cart.length === 0 && 
                 <div className="emptyCart">
                     <h2>No items added</h2>
-                    <Link to={"/"}><Button variant="secondary">Go Back</Button></Link>
+                    <Link to={"/"}><button variant="secondary">Go Back</button></Link>
                 </div> 
             }
             

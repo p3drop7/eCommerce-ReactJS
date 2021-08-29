@@ -1,10 +1,8 @@
-import { useContext } from 'react'
-import { CartContext } from '../Context/CartContext';
 import { Link } from 'react-router-dom';
+import { CartContext } from '../Context/CartContext';
+import { useContext } from 'react'
 import CartWidget from '../CartWidget/CartWidget';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+import { Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import './NavBar.css'
 
 function NavBar({cats}) {
