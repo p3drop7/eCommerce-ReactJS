@@ -48,6 +48,11 @@
     color: #212120;
 }
 
+.detailDescription {
+    font-size: 1em;
+    font-weight: lighter;
+}
+
 .detailPrice {
     margin: 0px;
     font-size: 1.5em;

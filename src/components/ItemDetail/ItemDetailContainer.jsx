@@ -26,11 +26,10 @@ function ItemDetailContainer() {
 
     return (
         <div className="itemDetailContainer" >
-            {
-                item ? <ItemDetail item={item} />
-                     : <Spinner animation="border" variant="primary" />
-            }
+            { (item && exists) && <ItemDetail item={item} /> }
             
+            { (!item && exists) && <Spinner animation="border" variant="primary" /> }
+        
             { !exists && <p>Item not found</p> }
         </div>  
     )

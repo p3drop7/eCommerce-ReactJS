@@ -8,6 +8,7 @@ function Detail({item={}}) {
             <div style={{backgroundImage: `url(${item.pictureSRC})`}} className="itemPicture" />
             <div className="itemDescription" >
                 <p className="detailTitle" >{item.name}</p>
+                <p className="detailDescription">{item.description}</p>
                 <p className="detailPrice" >${item.price}</p>
             </div>
         </>
