@@ -13,7 +13,6 @@ function ItemList({items}) {
                         price={item.price}
                         pictureSRC={item.pictureSRC}
                     /> 
-            
                 )
             }  
         </Row>

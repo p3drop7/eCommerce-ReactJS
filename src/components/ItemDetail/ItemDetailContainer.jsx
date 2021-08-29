@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useLayoutEffect } from 'react'
 import { useParams } from 'react-router'
 import ItemDetail from "./ItemDetail"
 import Spinner from 'react-bootstrap/spinner'
@@ -11,6 +11,12 @@ function ItemDetailContainer() {
     const [exists, setExists] = useState(true)
     const { itemId } = useParams()
 
+    useLayoutEffect(()=>{
+        window.scrollTo({
+            top: 700,
+            behavior: 'smooth'
+          });
+    })
 
     useEffect(() => {
         const data = getFirestore()

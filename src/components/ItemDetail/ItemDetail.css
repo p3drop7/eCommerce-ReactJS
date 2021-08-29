@@ -1,7 +1,7 @@
 .itemDetailContainer {
     height: 90vh;
     width: auto;
-    margin-top: 30px;
+    margin-top: 20px;
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
@@ -102,4 +102,37 @@
     color: white;
     background-color: gray;
     border-color: gray;
+}
+
+@media (max-width: 550px) {
+
+    .itemDetail {
+        height: auto;
+        width: 100%;
+        margin: 50px 10px;
+        justify-self: center;
+        align-self: center;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: 
+            "itemPicture itemDescription"
+            "itemCounter itemCounter";
+    }
+
+    .itemPicture {
+        background-size: contain;
+    }
+
+    .confirmAddButton {
+        width: 100%;
+    }
+
+    .goBackButton {
+        width: 100%
+    }
+
+    .ItemCountContainer {
+        margin-top: 20px;
+    }
 }

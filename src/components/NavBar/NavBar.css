@@ -1,11 +1,8 @@
-.navbar {
-    position: sticky!important;
-}
-
-.navMenu {
+.navBar {
     width: 100%;
-    padding: 0px !important;
-    position: sticky;
+    padding-top: .5rem !important;
+    padding-bottom: .5rem !important;
+    position: sticky !important;
     top: 0px;
     z-index: 100;
 }
@@ -20,4 +17,8 @@
 
 .brand:hover {
     transform: scale(1.1);
+}
+
+.solidNavBar {
+    background-color: gray;
 }

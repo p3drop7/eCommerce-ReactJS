@@ -1,6 +1,6 @@
-import React from "react"
 import { FaRegTrashAlt } from 'react-icons/fa'
 import './Cart.css'
+import { Link } from 'react-router-dom'
 
 function CartItem({item, quantity, removeItem}) {
     
@@ -8,14 +8,16 @@ function CartItem({item, quantity, removeItem}) {
         <div className='cartItem'>
             
             <div className="cartItemPictureContainer" >
-                <img src={item.pictureSRC} alt={item.name} className="cartItemPicture" />
+                <Link to={`/item/${item.id}`}>
+                    <img src={item.pictureSRC} alt={item.name} className="cartItemPicture" />
+                </Link>
             </div>
 
             <div className="cartItemDescription" >
                 <h4>{item.name}</h4>
-                <p>Price: ${item.price}</p>
-                <p>Quantity: {quantity}</p>
-                <p>Total: ${item.price * quantity}</p>
+                <p><strong>Price:</strong> ${item.price}</p>
+                <p><strong>Quantity:</strong> {quantity}</p>
+                <p><strong>Total:</strong> ${item.price * quantity}</p>
                 <FaRegTrashAlt onClick={()=> removeItem(item.id)} className="tash"/>
             </div>   
 

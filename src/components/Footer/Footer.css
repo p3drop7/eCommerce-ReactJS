@@ -1,5 +1,6 @@
 .footerContainer {
-    height: 80vh;
+    height: auto;
+    min-height: 80vh;
     background-color: #DFDDD8;
     display: flex;
     flex-flow: column wrap;
@@ -42,7 +43,7 @@ h2 {
 }
 
 .footerSocialMedia {
-    margin-top: 20px;
+    margin: 30px;
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
@@ -78,4 +79,32 @@ h2 {
 
 .footerCopyrights a:hover {
     color: blue;
+}
+
+@media (max-width: 650px) {
+
+    .footerContainer {
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footerMenu {
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footerMenu div {
+        margin: 15px 0px !important;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footerCopyrights {
+        margin-bottom: 20px;
+    }
+
 }

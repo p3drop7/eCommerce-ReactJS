@@ -2,10 +2,10 @@ import firebase from 'firebase/app'
 import 'firebase/firestore'
 import { getFirestore } from '../../data/firebaseService'
 import { Link } from 'react-router-dom'
-import { useContext, useState } from 'react'
+import { useContext, useState, useLayoutEffect } from 'react'
 import { CartContext } from '../Context/CartContext'
-import { IoAlertCircleOutline } from "react-icons/io5";
 import { Spinner } from 'react-bootstrap';
+import OrderForm from "./OrderForm"
 import './Order.css'
 
 function Order() {
@@ -61,6 +61,13 @@ function Order() {
                 emptyTotalPrice()
             })
     }
+    
+    useLayoutEffect(()=>{
+        window.scrollTo({
+            top: 700,
+            behavior: 'smooth'
+          });
+    })
 
     return (
         <div className="order">
@@ -69,47 +76,14 @@ function Order() {
             <div className="orderSubtitle">ENTER YOUR SHOPPING DETAILS</div>
             
             { buyerLoaded === 100 &&
-                <form onSubmit={handleSubmit} onChange={handleChange} className="confirmForm" >
-                
-                    <input 
-                        type="text" 
-                        placeholder="Full name" 
-                        name="name" 
-                    />
-
-                    <input 
-                        type="number" 
-                        placeholder="Phone number" 
-                        name="phone"
-                    />
-
-                    <input 
-                        type="email" 
-                        placeholder="Email" 
-                        name="email"
-                    />
-
-                    <input 
-                        type="email" 
-                        placeholder="Confirm Email" 
-                        name="confirmEmail"
-                    />
-
-                    { emailError && 
-                        <p className="checkEmail" >
-                            <IoAlertCircleOutline/>Please, check email
-                        </p>
-                    }
-                    
-                    <button type="submit">CONFIRM</button>
-
-                </form>
+                <OrderForm handleSubmit={handleSubmit} handleChange={handleChange} emailError={emailError} />
             }
 
             { buyerLoaded === 200 &&
                 <div className="sendOrderDetails" >
-                    <p>Name: {order.buyer.name}</p>
-                    <p>Total ${order.total}</p>
+                    <p>YOUR NAME:</p>
+                    <p>{order.buyer.name}</p>
+                    <p>TOTAL: ${order.total}</p>
                     <button onClick={onConfirm} className="sendOrderButton" >Send order</button>
                 </div>
             }

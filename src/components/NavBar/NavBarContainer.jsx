@@ -14,7 +14,7 @@ function NavBarContainer() {
     }, [])
     
     return (
-        <NavBar cats={cats} className="navbar" />
+        <NavBar cats={cats} id="navBar" />
     )
 }
 

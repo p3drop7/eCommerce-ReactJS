@@ -8,10 +8,10 @@ import './NavBar.css'
 function NavBar({cats}) {
 
     const { cart } = useContext(CartContext)
-    
+
     return (
         
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className="navMenu" cats={cats} >
+        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className="navBar" cats={cats} >
             <Navbar.Brand as={Link} to="/" className="brand">PCS</Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             {
