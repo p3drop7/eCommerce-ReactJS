@@ -7,6 +7,10 @@
     align-items: flex-start;
 }
 
+.cartTitle {
+    margin-top: 40px;
+}
+
 .cartList {
     width: 400px;
     padding: 0px;
@@ -71,8 +75,9 @@
 }
 
 .cartTotal h2 {
-    margin: 2px;
-    font-size: 1.5em;
+    margin-top: 10px;
+    margin-bottom: 10px !important;
+    font-size: 1.5em !important;
 }
 
 .cartTotal p {
@@ -127,4 +132,19 @@
 
 .tash:hover {
     color: red;
+}
+
+.goBackCartButton {
+    padding: 6px 16px;
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    background-color: rgb(220, 216, 216);
+    transition: 0.5s all;
+}
+
+.goBackCartButton:hover {
+    background-color: gray;
+    color: white;
+    border-color: gray;
 }

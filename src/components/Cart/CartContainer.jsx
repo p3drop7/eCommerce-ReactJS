@@ -12,6 +12,8 @@ function CartContainer() {
     return (
         <div>
 
+            <h3 className="cartTitle" >YOUR CART</h3>
+
             { cart.length !== 0 && 
                 <div className='cartContainer' >
 
@@ -43,7 +45,7 @@ function CartContainer() {
             { cart.length === 0 && 
                 <div className="emptyCart">
                     <h2>No items added</h2>
-                    <Link to={"/"}><button variant="secondary">Go Back</button></Link>
+                    <Link to={"/"} className="goBackCartButton" >Go Back</Link>
                 </div> 
             }
             
