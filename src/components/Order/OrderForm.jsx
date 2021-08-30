@@ -1,4 +1,6 @@
 import { IoAlertCircleOutline } from "react-icons/io5";
+import { FaCcVisa, FaCcMastercard } from 'react-icons/fa'
+import { SiAmericanexpress } from 'react-icons/si'
 
 function OrderForm({handleSubmit, handleChange, emailError}) {
 
@@ -34,8 +36,36 @@ function OrderForm({handleSubmit, handleChange, emailError}) {
                         <IoAlertCircleOutline/>Please, check email
                     </p>
                 }
-                
-                <button type="submit">CONFIRM</button>
+
+                <div className="creditCardInformation">
+                    <input 
+                        type="number" 
+                        placeholder="Credit Card Number" 
+                        name="cardNumber"
+                    />  
+                    
+                    <div className="cvvAndDate">
+                        <input 
+                            type="number" 
+                            placeholder="CVV Number" 
+                            name="CVVNUmber"
+                        /> 
+
+                        <input 
+                            type="date" 
+                            placeholder="Expiration Date" 
+                            name="expirationDate"
+                        /> 
+                    </div>
+
+                    <div className="cardIcons" >
+                        <FaCcVisa className="cardIcon visa" />
+                        <FaCcMastercard className="cardIcon mastercard" />
+                        <SiAmericanexpress className="cardIcon americanex" />
+                    </div>
+                </div>
+    
+                <button type="submit" >CONFIRM</button>
         </form>
     )
 }

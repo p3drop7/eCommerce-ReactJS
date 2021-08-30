@@ -1,5 +1,7 @@
 .order {
+    height: auto;
     min-height: 100vh;
+    margin-bottom: 40px;
     display: flex;
     flex-flow: column nowrap;
     justify-content: flex-start;
@@ -7,7 +9,7 @@
 }
 
 .orderTitle {
-    padding: 30px 0px;
+    padding-top: 30px;
     padding-bottom: 0px;
     color: black;
     font-size: 3em;
@@ -18,11 +20,11 @@
 
 .orderSubtitle {
     font-size: 1.5em;
-    margin: 30px 0px !important;
+    margin: 5px 0px !important;
 }
 
 .confirmForm {
-    padding: 20px;
+    padding: 20px 40px;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
@@ -33,7 +35,7 @@
 
 form input {
     height: 33px;
-    width: 300px;
+    width: 320px;
     margin: 10px;
     border-bottom: 0.5px solid gray;
     border-top: none;
@@ -53,9 +55,16 @@ form input:focus {
 
 form button {
     padding: 0px 10px;
-    margin: 10px;
+    margin: 0px;
     background-color: white;
     border: 1px solid black;
+    transition: all 0.3s;
+}
+
+form button:hover {
+    color: white;
+    background-color: green;
+    border: 1px solid green;
 }
 
 .checkEmail {
@@ -89,9 +98,9 @@ form button {
 }
 
 .sendOrderButton:hover {
-    background-color: teal;
+    background-color: green;
     color: white;
-    border-color: teal;
+    border-color: green;
 }
 
 .goBackButtonOrder {
@@ -107,4 +116,57 @@ form button {
     color: white;
     background-color: gray;
     border-color: gray;
+}
+
+.creditCardInformation {
+    width: 325px;
+    padding: 10px 0px 15px 0px;
+    margin: 20px 0px;
+    border: 1px solid gray;
+    border-radius: 10px;
+}
+
+.creditCardInformation input {
+    width: 295px;
+    padding: 0px 10px;
+}
+
+.cvvAndDate {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.creditCardInformation div input {
+    padding: 0px;
+    width: 140px;
+}
+
+.cardIcons {
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardIcon {
+    height: 2em;
+    width: 2em;
+    margin: 10px 10px 0px 10px;
+}
+
+.visa {
+ color: navy;
+}
+
+.mastercard {
+    color: red;
+}
+
+.americanex {
+    color: blue;
 }

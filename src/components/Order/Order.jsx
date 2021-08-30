@@ -20,7 +20,8 @@ function Order() {
         name: "",
         phone: "",
         email: "",
-        confirmEmail: ""
+        confirmEmail: "",
+        cardNumber: ""
     })
 
     const [order, setOrder] = useState({   // Oder Details
@@ -71,7 +72,7 @@ function Order() {
     
     useLayoutEffect(()=>{
         window.scrollTo({
-            top: 700,
+            top: 730,
             behavior: 'smooth'
           });
     }) // Scrolls window to this component when loaded
