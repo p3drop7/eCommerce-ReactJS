@@ -38,6 +38,7 @@ Este proyecto cuenta con:
 ## Preview de la App en funcionamiento:
 
 ![Peters Clothing Store](https://i.ibb.co/0fhfwZW/estore-readme.gif)
+![Peters Clothing Store](https://i.ibb.co/0fhfwZW/estore-readme.gif)
 
 ### Coded by:
 Pedro Palencia
